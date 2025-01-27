@@ -1,0 +1,13 @@
+#search-text {
+  max-width: 400px;
+}
+
+.product-container {
+  min-width: 75%;
+  max-width: 100%;
+}
+
+.cart {
+  min-width: 25%;
+  max-width: 100%;
+}

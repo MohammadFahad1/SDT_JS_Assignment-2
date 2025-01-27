@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header
+        id="search-section"
+        class="my-5 d-flex justify-content-center align-items-center gap-2"
+      >
+        <input
+          type="text"
+          name="search-text"
+          id="search-text"
+          class="form-control border-1 border-success rounded-0"
+          placeholder="Search"
+        />
+        <button
+          id="search-button"
+          class="btn btn-outline-success rounded-0 px-4 fw-bolder"
+        >
+          Search
+        </button>
+      </header>
+      <main
+        class="main-section d-flex flex-wrap flex-md-nowrap justify-content-center justify-content-md-between"
+      >
+        <div
+          class="product-container d-flex flex-wrap gap-4 justify-content-center justify-content-md-between"
+          id="product-container"
+        ></div>
+        <div class="cart" id="cart">
+          <h1>Cart</h1>
+        </div>
+      </main>
+    </div>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/script.js"></script>
+  </body>
+</html>
