@@ -28,14 +28,40 @@
         </button>
       </header>
       <main
-        class="main-section d-flex flex-wrap flex-md-nowrap justify-content-center justify-content-md-between"
+        class="main-section d-flex flex-wrap flex-md-nowrap justify-content-center justify-content-md-between gap-4"
       >
         <div
-          class="product-container d-flex flex-wrap gap-4 justify-content-center justify-content-md-between"
+          class="product-container d-flex flex-wrap gap-4 justify-content-center"
           id="product-container"
         ></div>
         <div class="cart" id="cart">
-          <h1>Cart</h1>
+          <h3>Selected Items: <span id="selected-items">0</span></h3>
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">SL</th>
+                <th scope="col">Img</th>
+                <th scope="col">Name</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td>Larry the Bird</td>
+                <td>@twitter</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </main>
     </div>

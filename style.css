@@ -3,11 +3,21 @@
 }
 
 .product-container {
-  min-width: 75%;
+  min-width: 80%;
   max-width: 100%;
 }
 
 .cart {
-  min-width: 25%;
+  min-width: 20%;
   max-width: 100%;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.actions button {
+  width: 100%;
 }
