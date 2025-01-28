@@ -18,6 +18,6 @@
   gap: 10px;
 }
 
-.actions button {
+.actions:nth-child(1) button {
   width: 100%;
 }
