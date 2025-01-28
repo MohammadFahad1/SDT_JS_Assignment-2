@@ -8,7 +8,7 @@ const loadData = () => {
 
 const displayData = (data) => {
   productContainer.innerHTML = "";
-  if (data == "no data found") {
+  if (!data || data == "no data found") {
     productContainer.innerHTML = `
     <h5 class="text-danger display-5">No Data Found</h5>`;
   } else {
@@ -30,7 +30,9 @@ const displayData = (data) => {
         <button type="button" class="btn btn-outline-success w-100" onclick="addToCart('${
           element.strGlass
         }', '${element.strDrinkThumb}', this)">Add to Cart</button>
-        <button type="button" class="btn btn-outline-danger" id="details" data-bs-toggle="modal" data-bs-target="#exampleModal">Details</button>
+        <button type="button" class="btn btn-outline-danger" id="details" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="cocktailDetail('${
+          element.idDrink
+        }')">Details</button>
     </div>`;
       productContainer.appendChild(div);
     });
@@ -70,4 +72,21 @@ const addToCart = (title, thumb, el) => {
     el.setAttribute("disabled", true);
     document.getElementById("selected-items").innerText = cartCount - 1;
   }
+};
+
+const cocktailDetail = (id) => {
+  fetch(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${id}`)
+    .then((res) => res.json())
+    .then((data) => {
+      document.getElementById("exampleModalLabel").innerText =
+        data.drinks[0].strGlass;
+      document.getElementById("modal-body").innerHTML = `
+        <img src="${data.drinks[0].strDrinkThumb}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title my-4">Details</h5>
+          <p class="card-text">Category: <b>${data.drinks[0].strCategory}</b></p>
+          <p class="card-text">Alcoholic: <b>${data.drinks[0].strAlcoholic}</b></p><p class="card-text">${data.drinks[0].strInstructions}</p>
+        </div>
+      `;
+    });
 };
